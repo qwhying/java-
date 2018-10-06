@@ -9,3 +9,10 @@
 *.xmi
 *.prefs
 *.prefs
+*.xmi
+*.index
+*.xmi
+*.index
+*.prefs
+*.json
+*.lock
