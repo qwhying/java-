@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.*;
 public class StopWatch_homework {
 
@@ -24,8 +25,15 @@ public class StopWatch_homework {
 		}
 		sw.stop();//停止计时
 		System.out.println("进行100000个数的排序用了："+sw.getElapsedTime()+"毫秒。");
-		
-		
+		for(int i=0;i<100000;i++)//创建一个100000个随机数的数组
+		{
+			int k=random.nextInt(11);//从1-10的随机数
+			int_array[i]=k;
+		}
+		sw.start();
+		Arrays.sort(int_array);
+		sw.stop();
+		System.out.println(sw.getElapsedTime());
 
 	}
 
