@@ -47,6 +47,9 @@ public class Course {
 
     }
     public void clear(){
-
+         for(int i=0;i<numberOfStudents;i++)
+         {
+             students[i]="";
+         }
     }
 }
