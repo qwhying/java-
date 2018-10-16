@@ -5,7 +5,7 @@ package homework;
  */
 public class Queue {
     private int[] elements;
-    private int size;
+    private int size;//当前队列中的元素个数
     public static final int DEFAULT_CAPACITY=8;
 
     //construct a queue with the default capacity 8
@@ -16,6 +16,7 @@ public class Queue {
     public Queue(int capacity)/**construct a new queue*/
     {
         elements=new int[capacity];
+        size=0;
     }
     /**push a new integer to the end queue*/
     public void enqueue(int v)

@@ -5,8 +5,8 @@ package thinkingproblem;
  */
 public class Toll
 {
-    private final int BigcarToll=10;//toll for big car
-    private final int SmallcarToll=5;//toll for small car
+    private final int BigcarToll=10;//toll for a big car
+    private final int SmallcarToll=5;//toll for a small car
     private int Bigcars;//the number of big cars
     private int Smallcars;//the number of small cars
     Toll()
