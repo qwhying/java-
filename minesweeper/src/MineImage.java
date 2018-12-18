@@ -5,7 +5,7 @@ import java.awt.*;
  * Created by Qwhying on 2018/12/15
  */
 public class MineImage extends JFrame {
-    public static ImageIcon getImageIcon(int width, int height, int mineStatus)
+    public static ImageIcon getImageIcon(int width, int height, int mineStatus)//设置按钮图标的函数，返回一个对应图片的图像图标
     {
         String imagePath = null;
         if (mineStatus == MineType.MINE_STATUS_OPEN_0) {
