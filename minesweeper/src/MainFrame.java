@@ -1,16 +1,19 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /**
  * Created by Qwhying on 2018/12/16
  */
-public class MainFrame extends JFrame {
-    public final int mMineCount = 75;// 雷个数
-    public final int mRowNums = 25;// 格子行数
-    public final int mColumnNums = 30;// 格子列数
+public class MainFrame extends JFrame  {
+    public final int mMineCount = 60;// 雷个数
+    public final int mRowNums = 20;// 格子行数
+    public final int mColumnNums = 25;// 格子列数
 
-    public final int mGridSideLength = 25;// 格子的边长
+    public final int mGridSideLength = 29;// 格子的边长
 
     private JButton[][] buttonArr;//每个按钮是一个格子
     private JButton resetBtn;//重新开始键
@@ -26,14 +29,16 @@ public class MainFrame extends JFrame {
 
     // 入口
     public static void main(String[] args) {
+
         new MainFrame();
     }
+
     public MainFrame() {
         // 初始化UI对应的背景数组状态
         gameUtils = new MineGameUtils(mMineCount, mRowNums, mColumnNums, callback);
 
-        mWidth = mColumnNums * mGridSideLength;//总宽度为一行格子有几个乘上边长
-        mHeight = mRowNums * mGridSideLength;//总高度为一列格子有几个乘上边长
+        mWidth = mColumnNums * mGridSideLength;
+        mHeight = mRowNums * mGridSideLength;
 
         this.setResizable(false);
         this.setTitle(GAME_TITLE);
@@ -51,6 +56,9 @@ public class MainFrame extends JFrame {
         // 显示窗口
         this.setVisible(true);
     }
+
+
+
     public JPanel topLayout() {
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());

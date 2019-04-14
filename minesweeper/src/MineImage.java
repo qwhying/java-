@@ -11,21 +11,21 @@ public class MineImage extends JFrame {
         if (mineStatus == MineType.MINE_STATUS_OPEN_0) {
             imagePath = "images/m0.png";
         } else if (mineStatus == MineType.MINE_STATUS_OPEN_1) {
-            imagePath = "images/m1.png";
+            imagePath = "images/icon1.png";
         } else if (mineStatus == MineType.MINE_STATUS_OPEN_2) {
-            imagePath = "images/m2.png";
+            imagePath = "images/icon2.png";
         } else if (mineStatus == MineType.MINE_STATUS_OPEN_3) {
-            imagePath = "images/m3.png";
+            imagePath = "images/icon3.png";
         } else if (mineStatus == MineType.MINE_STATUS_OPEN_4) {
-            imagePath = "images/m4.png";
+            imagePath = "images/icon4.png";
         } else if (mineStatus == MineType.MINE_STATUS_OPEN_5) {
-            imagePath = "images/m5.png";
+            imagePath = "images/icon5.png";
         } else if (mineStatus == MineType.MINE_STATUS_OPEN_6) {
-            imagePath = "images/m6.png";
+            imagePath = "images/icon6.png";
         } else if (mineStatus == MineType.MINE_STATUS_OPEN_7) {
-            imagePath = "images/m7.png";
+            imagePath = "images/icon7.png";
         } else if (mineStatus == MineType.MINE_STATUS_OPEN_8) {
-            imagePath = "images/m8.png";
+            imagePath = "images/icon8.png";
         } else if (mineStatus == MineType.MINE_STATUS_OPEN_9) {
             imagePath = "images/m9.png";
         } else if (mineStatus == MineType.MINE_STATUS_BLANK) {

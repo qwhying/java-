@@ -43,7 +43,7 @@ public class MineGameUtils {
      * @param callBack
      *            回调
      */
-    public MineGameUtils(int mineCount, int rowNums, int columnNums, RemoteJVMLauncher.CallBack callBack) {//构造函数
+    public MineGameUtils(int mineCount, int rowNums, int columnNums, CallBack callBack) {//构造函数
         if (mineCount <= 1 || rowNums <= 1 || columnNums <= 1) {
             return;
         }
@@ -279,5 +279,47 @@ public class MineGameUtils {
         void onLeftClick(MineBean mineBean, int i, int j);
 
         void onRightClick(MineBean mineBean, int i, int j);
+    }
+    public void printArrayInt() {
+        if (beanArr == null) {
+            return;
+        }
+        for (int i = 0; i < beanArr.length; i++) {
+            for (int j = 0; j < beanArr[i].length; j++) {
+                System.out.print(beanArr[i][j].getMineCount());
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+    private void gameOver(int i, int j) {
+        if (beanArr == null || this.callBack == null) {
+            return;
+        }
+        MineBean mineBean = getMineBean(i, j);
+        if (mineBean != null) {
+            mineBean.setImageStatus(MineType.MINE_STATUS_MINE_CLICK);
+            if (this.callBack != null) {
+                this.callBack.onRightClick(mineBean, i, j);
+            }
+        }
+        for (int k1 = 0; k1 < beanArr.length; k1++) {
+            for (int k2 = 0; k2 < beanArr[k1].length; k2++) {
+                mineBean = getMineBean(k1, k2);
+                if (!mineBean.getisClicked()) {
+                    if (mineBean.isMineNow()) {
+                        mineBean.setImageStatus(MineType.MINE_STATUS_OPEN_9);
+                    } else {
+                        mineBean.setImageStatus(mineBean.getMineCount());
+                    }
+                    if (this.callBack != null) {
+                        this.callBack.onRightClick(mineBean, k1, k2);
+                    }
+                }
+            }
+        }
+        if (this.callBack != null) {
+            this.callBack.onGameOver();
+        }
     }
 }
